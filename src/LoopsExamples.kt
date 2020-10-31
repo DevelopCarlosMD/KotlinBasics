@@ -28,9 +28,28 @@ class LoopsExamples {
 
         // the next character!!
         for (ch in "abc") {
-            print(ch + 1)
+            println(ch + 1)
+        }
+    }
+
+    fun exampleInARange(c: Char) = c in 'a'..'z' || c in 'A'..'Z'
+
+    fun recognize(c: Char) = when (c) {
+        in '0'..'9' -> "It's a digit!"
+        in 'a'..'z', in 'A'..'Z' -> "It's a letter!"
+        else -> "I don't know... can you repeat that question! xD"
+    }
+
+    fun isValidIdentifier(s: String): Boolean {
+        return when (s) {
+            in "_12".."_19" -> true
+            in "_name".."name" -> true
+            else -> false
         }
     }
 
 
+
+
 }
+
